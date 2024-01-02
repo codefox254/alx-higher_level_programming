@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-print("Python is more fun than c for sure")
+python3 $PYFILE
+
 
