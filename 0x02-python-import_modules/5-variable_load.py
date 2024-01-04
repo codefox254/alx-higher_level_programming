@@ -1,7 +1,10 @@
-# Import the variable a from the file variable_load_5.py
+#!/usr/bin/python3
 from variable_load_5 import a
 
-# Check if the code is executed directly or imported
+
+def find_var():
+    print(a)
+
+
 if __name__ == "__main__":
-# Print the value of the variable a
-print(a)
+    find_var()

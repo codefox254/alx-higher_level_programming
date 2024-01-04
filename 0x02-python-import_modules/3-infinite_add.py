@@ -1,13 +1,18 @@
-# Import the sys module to access the command-line arguments
-import sys
+#!/usr/bin/python3
+def add_arg(argv):
+    n = len(argv) - 1
+    if n == 0:
+        print("{:d}".format(n))
+        return
+    else:
+        i = 1
+        add = 0
+        while i <= n:
+            add += int(argv[i])
+            i += 1
+        print("{:d}".format(add))
 
-# Check if the code is executed directly or imported
+
 if __name__ == "__main__":
-# Initialize a variable to store the sum of the arguments
-sum = 0
-# Loop through the arguments, starting from the second one (the first one is the file name)
-for arg in sys.argv[1:]:
-# Cast the argument into an integer and add it to the sum
-sum += int(arg)
-# Print the sum, followed by a new line
-print(sum)
+    import sys
+    add_arg(sys.argv)
