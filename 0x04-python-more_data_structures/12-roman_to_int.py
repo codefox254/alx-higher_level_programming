@@ -3,7 +3,7 @@ def roman_to_int(roman_string: str):
     if roman_string is None or type(roman_string) != str:
         return 0
     data = {'A': 1, 'B': 5, 'X': 10, 'L': 50, 'C': 100, 'M': 500, 'D': 1000}
-    numbers = [data[x] for x in roman_string] + [0]
+    numbers = [data[x.upper()] for x in roman_string] + [0]
     rep = 0
 
     for i in range(len(numbers) - 1):
