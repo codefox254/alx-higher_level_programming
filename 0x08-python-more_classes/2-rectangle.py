@@ -46,3 +46,17 @@ class Rectangle:
         # Set the private instance attribute __height
         self.__height = value
 
+    # Define the public instance method for area
+    def area(self):
+        # Return the product of width and height
+        return self.width * self.height
+
+    # Define the public instance method for perimeter
+    def perimeter(self):
+        # Check if width or height is zero
+        if self.width == 0 or self.height == 0:
+            # Return zero
+            return 0
+        # Return the sum of twice the width and height
+        return 2 * (self.width + self.height)
+
