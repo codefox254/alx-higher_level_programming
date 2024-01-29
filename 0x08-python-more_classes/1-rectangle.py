@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Define the class Rectangle
 class Rectangle:
     # Define the constructor with optional width and height
