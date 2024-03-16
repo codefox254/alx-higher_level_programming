@@ -1,13 +1,5 @@
-/*
-Task:
-Write a script that lists all the tables of a database in your MySQL server.
-The database name will be passed as an argument of the mysql command (in the following example: mysql is the name of the database).
-*/
-
-USE `mysql`; -- Change 'mysql' to the desired database name
-
--- List all tables in the specified database
-SELECT TABLE_NAME
-FROM information_schema.TABLES
-WHERE TABLE_SCHEMA = DATABASE();
+-- List all tables in the current database
+SELECT TABLE_NAME AS Tables_in_hbtn_test_db_0 -- Select the table names and alias the column
+FROM information_schema.TABLES -- From the information schema's tables
+WHERE TABLE_SCHEMA = DATABASE(); -- Where the table schema matches the current database
 
