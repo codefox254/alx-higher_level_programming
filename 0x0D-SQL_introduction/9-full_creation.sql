@@ -1,11 +1,3 @@
-/*
-Task:
-Write a script that creates a table second_table in the database hbtn_0c_0 in your MySQL server and adds multiple rows.
-The database name will be passed as an argument to the mysql command.
-If the table second_table already exists, your script should not fail.
-You are not allowed to use the SELECT and SHOW statements.
-*/
-
 -- Create table if not exists
 CREATE TABLE IF NOT EXISTS hbtn_0c_0.second_table (
     id INT,
@@ -20,4 +12,3 @@ VALUES
     (2, 'Alex', 3),
     (3, 'Bob', 14),
     (4, 'George', 8);
-
