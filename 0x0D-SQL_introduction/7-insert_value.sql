@@ -1,10 +1,3 @@
-/*
-Task:
-Write a script that inserts a new row in the table first_table (database hbtn_0c_0) in your MySQL server.
-The database name will be passed as an argument of the mysql command.
-*/
-
 -- Insert a new row into first_table
 INSERT INTO hbtn_0c_0.first_table (id, name)
 VALUES (89, 'Best School');
-
