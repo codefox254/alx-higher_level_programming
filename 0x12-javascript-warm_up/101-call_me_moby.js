@@ -5,3 +5,9 @@ function executeXTimes(x, theFunction) {
         theFunction();
     }
 };
+function callMeMoby() {
+    console.log("Where I am!");
+}
+executeXTimes(5, callMeMoby); 
+executeXTimes(1, callMeMoby); 
+executeXTimes(-5, callMeMoby); 
