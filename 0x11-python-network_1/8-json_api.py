@@ -3,25 +3,23 @@
 This script takes a letter as input and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter. If no argument is given, it sets q="".
 """
 
-import requests
-import sys
+if __name__ == '__main__':
+    from requests import post
+    from sys import argv
 
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        letter = sys.argv[1]
-    else:
-        letter = ""
+    URL = 'http://0.0.0.0:5000/search_user'
+    data = {'q': argv[1] if len(argv) >= 2 else ""}
+    response = post(URL, data)
 
-    url = "http://0.0.0.0:5000/search_user"
-    payload = {'q': letter}
+    type_res = response.headers['content-type']
 
-    response = requests.post(url, data=payload)
-
-    try:
-        json_response = response.json()
-        if json_response:
-            print("[{}] {}".format(json_response.get('id'), json_response.get('name')))
+    if type_res == 'application/json':
+        result = response.json()
+        _id = result.get('id')
+        name = result.get('name')
+        if (result != {} and _id and name):
+            print("[{}] {}".format(_id, name))
         else:
-            print("No result")
-    except ValueError:
-        print("Not a valid JSON")
+            print('No result')
+    else:
+        print('Not a valid JSON')

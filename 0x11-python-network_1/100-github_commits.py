@@ -3,23 +3,23 @@
 This script lists 10 commits (from the most recent to oldest) of the repository specified by the user and owner names using the GitHub API.
 """
 
-import requests
-import sys
+if __name__ == '__main__':
+    from requests import get
+    from sys import argv
 
-if __name__ == "__main__":
-    repository_name = sys.argv[1]
-    owner_name = sys.argv[2]
+    repo = argv[1]
+    owner = argv[2]
+    i = 0
 
-    url = f"https://api.github.com/repos/{owner_name}/{repository_name}/commits"
+    URL = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
 
-    response = requests.get(url)
+    response = get(URL)
+    json = response.json()
 
-    if response.status_code == 200:
-        commits = response.json()
-
-        for commit in commits[:10]:
-            sha = commit['sha']
-            author_name = commit['commit']['author']['name']
-            print(f"{sha}: {author_name}")
-    else:
-        print("Error:", response.text)
+    for element in json:
+        if i > 9:
+            break
+        sha = element.get('sha')
+        author = element.get('commit').get('author').get('name')
+        print("{}: {}".format(sha, author))
+        i += 1
