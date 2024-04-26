@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 This script fetches the status from https://alx-intranet.hbtn.io/status and displays the body response.
 """

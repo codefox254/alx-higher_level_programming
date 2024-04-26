@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 This script takes a letter as input and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter. If no argument is given, it sets q="".
 """
