@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+This script takes a URL as input, sends a request to the URL, and displays the body of the response. It handles HTTP errors using urllib.error.HTTPError.
+"""
+
 import urllib.request
 import sys
 import urllib.error

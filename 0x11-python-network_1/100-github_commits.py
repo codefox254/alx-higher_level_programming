@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+This script lists 10 commits (from the most recent to oldest) of the repository specified by the user and owner names using the GitHub API.
+"""
+
 import requests
 import sys
 
