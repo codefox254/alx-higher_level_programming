@@ -1,17 +1,25 @@
 #!/usr/bin/python3
 """
-This script fetches the status from https://alx-intranet.hbtn.io/status 
-and displays the body response.
+This script fetches the status from a specified URL and displays the body response.
 """
 
-if __name__ == '__main__':
-    import sys
-    from urllib import request, error
+import sys
+from urllib import request, error
 
-    argv = sys.argv
-    url = argv[1]
+if __name__ == '__main__':
+    # Check if URL argument is provided
+    if len(sys.argv) != 2:
+        print("Usage: {} <URL>".format(sys.argv[0]))
+        sys.exit(1)
+
+    url = sys.argv[1]
+    
     try:
         with request.urlopen(url) as response:
-            print(response.read().decode('utf-8'))
+            body = response.read()
+            print("Body response:")
+            print("- type:", type(body))
+            print("- content:", body)
+            print("- utf8 content:", body.decode('utf-8'))
     except error.HTTPError as err:
-        print("Error code: {}".format(err.status))
+        print("Error code:", err.code)
