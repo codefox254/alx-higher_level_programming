@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-This script lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa.
+This script lists all states with a name starting with N (uppercase N) from the database hbtn_0e_0_usa.
 """
 import sys
-import MySQLdb
+import MySQLdb # type: ignore
 
 def list_states_starting_with_n(username, password, database):
     """

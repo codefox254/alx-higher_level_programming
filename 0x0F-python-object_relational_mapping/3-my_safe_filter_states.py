@@ -3,7 +3,7 @@
 This script displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 import sys
-import MySQLdb
+import MySQLdb # type: ignore
 
 def search_states_by_name(username, password, database, state_name):
     """
@@ -15,6 +15,7 @@ def search_states_by_name(username, password, database, state_name):
         database (str): MySQL database name.
         state_name (str): State name to search for.
     """
+
     # Connect to MySQL server
     db = MySQLdb.connect(
         host="localhost",

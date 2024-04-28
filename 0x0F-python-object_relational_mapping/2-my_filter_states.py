@@ -3,7 +3,7 @@
 This script displays all values in the states table of hbtn_0e_0_usa where name matches the argument.
 """
 import sys
-import MySQLdb
+import MySQLdb # type: ignore
 
 def search_states_by_name(username, password, database, state_name):
     """
@@ -28,10 +28,8 @@ def search_states_by_name(username, password, database, state_name):
     cursor = db.cursor()
 
     # Format the SQL query with user input
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(state_name)
-
-    # Execute the query
-    cursor.execute(query)
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id"
+    cursor.execute(query, (state_name,))
 
     # Fetch all the rows
     states = cursor.fetchall()

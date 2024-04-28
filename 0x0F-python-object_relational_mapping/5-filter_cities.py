@@ -8,7 +8,6 @@ import MySQLdb
 def list_cities_by_state(username, password, database, state_name):
     """
     Function to list all cities of a given state from the database.
-
     Args:
         username (str): MySQL username.
         password (str): MySQL password.
