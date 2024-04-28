@@ -2,7 +2,6 @@
 """
 This script takes a URL as input, sends a GET request to the URL using the requests library, and displays the value of the X-Request-Id variable in the response header.
 """
-
 from requests import get
 from sys import argv
 

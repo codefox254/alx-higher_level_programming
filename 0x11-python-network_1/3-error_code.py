@@ -2,7 +2,6 @@
 """
 This script takes a URL as input, sends a request to the URL, and displays the body of the response. It handles HTTP errors using urllib.error.HTTPError.
 """
-
 import sys
 from urllib import request, error
 

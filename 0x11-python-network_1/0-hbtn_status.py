@@ -2,7 +2,6 @@
 """
 This script fetches the status from a specified URL and displays the body response.
 """
-
 import sys
 from urllib import request, error
 

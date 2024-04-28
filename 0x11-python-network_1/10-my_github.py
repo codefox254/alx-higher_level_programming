@@ -2,7 +2,6 @@
 """
 This script takes GitHub username and password (personal access token) as input and uses Basic Authentication with a personal access token to access the GitHub API and display the user's ID.
 """
-
 import requests
 import sys
 
