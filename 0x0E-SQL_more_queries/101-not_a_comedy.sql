@@ -1,11 +1,11 @@
---SQL script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows.
+-- SQL script that lists all shows without the genre Comedy in the database hbtn_0d_tvshows.
 SELECT title
 FROM tv_shows
 WHERE title NOT IN
-(SELECT title
-FROM tv_shows
-LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
-LEFT JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
-WHERE tv_genres.name = 'Comedy')
+(SELECT s.title
+FROM tv_shows s
+LEFT JOIN tv_show_genres sg ON s.id = sg.show_id
+LEFT JOIN tv_genres g ON sg.genre_id = g.id
+WHERE g.name = 'Comedy')
 GROUP BY title
 ORDER BY title ASC;
