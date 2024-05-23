@@ -1,5 +1,6 @@
 #!/usr/bin/node
-// prints all characters of a Star Wars movie
+// Prints all characters of a Star Wars movie
+
 const request = require('request');
 const util = require('util');
 const requestGet = util.promisify(request.get);
@@ -22,4 +23,3 @@ async function printCharacters() {
 }
 
 printCharacters();
-
