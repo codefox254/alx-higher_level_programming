@@ -1,13 +1,11 @@
 #!/usr/bin/node
-//add file
 
 const fs = require('fs');
-const file = process.argv[2];
-
-fs.readFile(file, 'utf-8', function (err, data) {
-  if (err) {
-    console.log(err);
+fs.readFile(process.argv[2], 'utf8', function (error, content) {
+if (error) {
+    console.error('Error reading the file:', error);
   } else {
-    console.log(data);
+    // If the file is read successfully, the 'content' parameter will contain the contents of the file as a string.
+    console.log(content);
   }
 });
