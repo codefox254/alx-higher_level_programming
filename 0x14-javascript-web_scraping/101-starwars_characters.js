@@ -12,6 +12,7 @@ async function printCharacters() {
     const response = await requestGet(url);
     const content = JSON.parse(response.body);
     const characters = content.characters;
+
     for (const character of characters) {
       const charResponse = await requestGet(character);
       const charContent = JSON.parse(charResponse.body);
